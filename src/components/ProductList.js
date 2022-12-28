@@ -1,15 +1,24 @@
-import {FlatList, StyleSheet, Text} from 'react-native';
+import {FlatList, StyleSheet} from 'react-native';
 import React from 'react';
 import data from '../data';
+import Product from './Product';
 
 export default function ProductList() {
-  const renderItem = ({item}) => <Text>{JSON.stringify(item, null, 2)}</Text>;
+  const renderItem = ({item}) => <Product product={item} />;
 
   return (
-    <FlatList data={data} keyExtractor={a => a.id} renderItem={renderItem} />
+    <FlatList
+      style={styles.container}
+      data={data}
+      numColumns={2}
+      keyExtractor={a => a.id}
+      renderItem={renderItem}
+    />
   );
 }
 
 const styles = StyleSheet.create({
-  container: {},
+  container: {
+    padding: 5,
+  },
 });
