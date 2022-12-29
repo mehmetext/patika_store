@@ -13,6 +13,7 @@ export default function ProductList() {
       numColumns={2}
       keyExtractor={a => a.id}
       renderItem={renderItem}
+      contentContainerStyle={styles.contentContainer}
     />
   );
 }
@@ -21,4 +22,5 @@ const styles = StyleSheet.create({
   container: {
     padding: 5,
   },
+  contentContainer: {paddingBottom: 80},
 });

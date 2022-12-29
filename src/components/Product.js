@@ -4,7 +4,7 @@ import React from 'react';
 export default function Product({product}) {
   return (
     <View style={styles.container}>
-      <Image source={{uri: product.imgURL}} />
+      <Image source={{uri: product.imgURL}} style={styles.image} />
       <Text style={styles.title}>{product.title}</Text>
       <Text style={styles.price}>{product.price}</Text>
       {!product.inStock && (
@@ -23,6 +23,14 @@ const styles = StyleSheet.create({
     margin: 5,
     borderRadius: 10,
     padding: 10,
+  },
+  image: {
+    height: 150,
+    width: '100%',
+    backgroundColor: 'white',
+    resizeMode: 'contain',
+    marginBottom: 10,
+    borderRadius: 10,
   },
   title: {
     fontWeight: 'bold',
